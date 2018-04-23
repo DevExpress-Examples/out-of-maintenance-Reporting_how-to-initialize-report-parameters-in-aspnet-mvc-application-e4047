@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Report Parameters example";
+}
+@using (Html.BeginForm())
+{
+    <div style="height: 40px; width: 610px;">
+        <div style="vertical-align: baseline;">
+            <label for="parameterOrderIdParameter" style="width: 240px; float: left; margin-top: 3px">
+                Enter the order ID from 10248 to 11077:
+            </label>
+            @Html.TextBox("parameterOrderID", 10248, new { style = "width:100px; margin:0px; float: left;" })
+        </div>
+        <div style="width: 100%; float: left; vertical-align: baseline; padding-top: 4px;">
+            <input style="float: right;" type="submit" value="Apply" />
+        </div>
+    </div>
+}
+<table cellspacing="0" cellpadding="0" class="reportBorder" style="margin-top: 20px;">
+    <tr>
+        <td>
+            @Html.DevExpress().ReportToolbar(settings =>
+       {
+           // The following settings are necessary for a Report Toolbar.
+           settings.Name = "ReportToolbar";
+           settings.ReportViewerName = "reportViewer1";
+       }).GetHtml()
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.Partial("ReportViewerPartial")
+        </td>
+    </tr>
+</table>
