@@ -1,1 +1,1 @@
-<%@ Application Codebehind="Global.asax.vb" Inherits="ReportParameterMVC.MvcApplication" Language="vb" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="ReportParameterMVC.MvcApplication" Language="C#" %>
